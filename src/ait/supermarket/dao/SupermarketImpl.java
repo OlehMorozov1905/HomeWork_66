@@ -31,7 +31,7 @@ public class SupermarketImpl implements Supermarket {
         products.remove(removed);
         return removed;
     }
-//=============== HOME WORK =================
+//================== HOME WORK ====================
     @Override
     public Product findByBarCode(long barCode) {
         return products.stream()
@@ -39,7 +39,7 @@ public class SupermarketImpl implements Supermarket {
                 .findFirst()
                 .orElse(null);
     }
-//===========================================
+//=================================================
     @Override
     public Iterable<Product> findByCategory(String category) {
         return findByPredicate(p -> category.equalsIgnoreCase(p.getCategory()));
@@ -62,13 +62,13 @@ public class SupermarketImpl implements Supermarket {
         LocalDate current = LocalDate.now();
         return findByPredicate(p -> current.isAfter(p.getExpDate()));
     }
-//=============== HOME WORK =================
+//================== HOME WORK ====================
     public Iterable<Product> findByPredicate(Predicate<Product> predicate) {
         return products.stream()
                 .filter(predicate)
                 .collect(Collectors.toList());
     }
-//============================================
+//==================================================
     @Override
     public int skuQuantity() {
         return products.size();
