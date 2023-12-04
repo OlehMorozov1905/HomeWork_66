@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class TitanicDataAnalysis {
+public class DataAnalysis {
     public static void main(String[] args) throws FileNotFoundException {
         try (BufferedReader br = new BufferedReader(new FileReader("train.csv"))) {
             String line = br.readLine();
